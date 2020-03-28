@@ -46,6 +46,7 @@
             this.btn_parametre = new System.Windows.Forms.Button();
             this.btn_resize = new System.Windows.Forms.Button();
             this.btn_stop = new System.Windows.Forms.Button();
+            this.panel_afficher_client = new System.Windows.Forms.Panel();
             this.panel_menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_parametre.SuspendLayout();
@@ -185,6 +186,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel_parametre);
+            this.panel1.Controls.Add(this.panel_afficher_client);
             this.panel1.Controls.Add(this.btn_parametre);
             this.panel1.Controls.Add(this.btn_resize);
             this.panel1.Controls.Add(this.btn_stop);
@@ -197,18 +199,21 @@
             // 
             // panel_parametre
             // 
+            this.panel_parametre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel_parametre.BackColor = System.Drawing.Color.DimGray;
             this.panel_parametre.Controls.Add(this.btn_deconnecter);
             this.panel_parametre.Controls.Add(this.btn_restaure_copie);
             this.panel_parametre.Controls.Add(this.btn_copie);
             this.panel_parametre.Controls.Add(this.btn_connecter);
-            this.panel_parametre.Location = new System.Drawing.Point(62, 4);
+            this.panel_parametre.Location = new System.Drawing.Point(52, 7);
             this.panel_parametre.Name = "panel_parametre";
-            this.panel_parametre.Size = new System.Drawing.Size(322, 269);
+            this.panel_parametre.Size = new System.Drawing.Size(322, 293);
             this.panel_parametre.TabIndex = 9;
             // 
             // btn_deconnecter
             // 
+            this.btn_deconnecter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_deconnecter.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_deconnecter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btn_deconnecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -225,6 +230,8 @@
             // 
             // btn_restaure_copie
             // 
+            this.btn_restaure_copie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_restaure_copie.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_restaure_copie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btn_restaure_copie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -240,6 +247,8 @@
             // 
             // btn_copie
             // 
+            this.btn_copie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_copie.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_copie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btn_copie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -255,6 +264,8 @@
             // 
             // btn_connecter
             // 
+            this.btn_connecter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_connecter.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btn_connecter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btn_connecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -274,9 +285,9 @@
             this.btn_parametre.FlatAppearance.BorderSize = 0;
             this.btn_parametre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_parametre.Image = global::GestionDeStock.Properties.Resources.Settings_32;
-            this.btn_parametre.Location = new System.Drawing.Point(0, 1);
+            this.btn_parametre.Location = new System.Drawing.Point(0, 0);
             this.btn_parametre.Name = "btn_parametre";
-            this.btn_parametre.Size = new System.Drawing.Size(67, 48);
+            this.btn_parametre.Size = new System.Drawing.Size(59, 49);
             this.btn_parametre.TabIndex = 8;
             this.btn_parametre.UseVisualStyleBackColor = true;
             this.btn_parametre.Click += new System.EventHandler(this.btn_parametre_Click);
@@ -306,6 +317,17 @@
             this.btn_stop.TabIndex = 6;
             this.btn_stop.UseVisualStyleBackColor = true;
             this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
+            // 
+            // panel_afficher_client
+            // 
+            this.panel_afficher_client.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_afficher_client.BackColor = System.Drawing.Color.Silver;
+            this.panel_afficher_client.Location = new System.Drawing.Point(6, 55);
+            this.panel_afficher_client.Name = "panel_afficher_client";
+            this.panel_afficher_client.Size = new System.Drawing.Size(886, 541);
+            this.panel_afficher_client.TabIndex = 10;
             // 
             // FrameMenu
             // 
@@ -346,5 +368,6 @@
         private System.Windows.Forms.Button btn_resize;
         private System.Windows.Forms.Button btn_stop;
         private System.Windows.Forms.Panel panel_parametre;
+        private System.Windows.Forms.Panel panel_afficher_client;
     }
 }

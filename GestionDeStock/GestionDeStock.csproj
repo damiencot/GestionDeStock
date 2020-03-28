@@ -101,6 +101,12 @@
     <Compile Include="PL\FrameMenu.Designer.cs">
       <DependentUpon>FrameMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\UserListClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\UserListClient.Designer.cs">
+      <DependentUpon>UserListClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produit.cs">
       <DependentUpon>BddStock.tt</DependentUpon>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FrameMenu.resx">
       <DependentUpon>FrameMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UserListClient.resx">
+      <DependentUpon>UserListClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
