@@ -43,10 +43,10 @@
             this.btn_restaure_copie = new System.Windows.Forms.Button();
             this.btn_copie = new System.Windows.Forms.Button();
             this.btn_connecter = new System.Windows.Forms.Button();
+            this.panel_afficher_client = new System.Windows.Forms.Panel();
             this.btn_parametre = new System.Windows.Forms.Button();
             this.btn_resize = new System.Windows.Forms.Button();
             this.btn_stop = new System.Windows.Forms.Button();
-            this.panel_afficher_client = new System.Windows.Forms.Panel();
             this.panel_menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_parametre.SuspendLayout();
@@ -207,7 +207,7 @@
             this.panel_parametre.Controls.Add(this.btn_connecter);
             this.panel_parametre.Location = new System.Drawing.Point(52, 7);
             this.panel_parametre.Name = "panel_parametre";
-            this.panel_parametre.Size = new System.Drawing.Size(322, 293);
+            this.panel_parametre.Size = new System.Drawing.Size(322, 70);
             this.panel_parametre.TabIndex = 9;
             // 
             // btn_deconnecter
@@ -280,6 +280,17 @@
             this.btn_connecter.UseVisualStyleBackColor = false;
             this.btn_connecter.Click += new System.EventHandler(this.btn_connecter_Click);
             // 
+            // panel_afficher_client
+            // 
+            this.panel_afficher_client.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_afficher_client.BackColor = System.Drawing.Color.White;
+            this.panel_afficher_client.Location = new System.Drawing.Point(6, 81);
+            this.panel_afficher_client.Name = "panel_afficher_client";
+            this.panel_afficher_client.Size = new System.Drawing.Size(886, 515);
+            this.panel_afficher_client.TabIndex = 10;
+            // 
             // btn_parametre
             // 
             this.btn_parametre.FlatAppearance.BorderSize = 0;
@@ -317,17 +328,6 @@
             this.btn_stop.TabIndex = 6;
             this.btn_stop.UseVisualStyleBackColor = true;
             this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
-            // 
-            // panel_afficher_client
-            // 
-            this.panel_afficher_client.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_afficher_client.BackColor = System.Drawing.Color.Silver;
-            this.panel_afficher_client.Location = new System.Drawing.Point(6, 55);
-            this.panel_afficher_client.Name = "panel_afficher_client";
-            this.panel_afficher_client.Size = new System.Drawing.Size(886, 541);
-            this.panel_afficher_client.TabIndex = 10;
             // 
             // FrameMenu
             // 

@@ -31,5 +31,23 @@ namespace GestionDeStock.PL
         {
             InitializeComponent();
         }
+
+        private void txt_recherche_client_Enter(object sender, EventArgs e)
+        {
+            if(txt_recherche_client.Text == "Rechercher")
+            {
+                txt_recherche_client.Text = "";
+                txt_recherche_client.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void UserListClient_Load(object sender, EventArgs e)
+        {
+            //Exemple ajout des lignes
+            data_grid_client.Rows.Add();
+            data_grid_client.Rows[0].Cells[1].Value = "Paul";
+            data_grid_client.Rows[0].Cells[2].Value = "Mathieu";
+        }
     }
 }
