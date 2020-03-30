@@ -46,6 +46,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_client)).BeginInit();
@@ -182,6 +183,7 @@
             this.Column3,
             this.Column4,
             this.Column5,
+            this.Column8,
             this.Column7,
             this.Column6});
             this.data_grid_client.EnableHeadersVisualStyles = false;
@@ -230,6 +232,12 @@
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Email";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
             // 
             // Column7
             // 
@@ -284,6 +292,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }

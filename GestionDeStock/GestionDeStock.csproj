@@ -70,6 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BddStock.edmx</DependentUpon>
     </Compile>
+    <Compile Include="BL\GestionClient.cs" />
     <Compile Include="BL\Connexion.cs" />
     <Compile Include="Categorie.cs">
       <DependentUpon>BddStock.tt</DependentUpon>

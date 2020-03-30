@@ -122,7 +122,7 @@
             this.txt_nom_ajout_client.Multiline = true;
             this.txt_nom_ajout_client.Name = "txt_nom_ajout_client";
             this.txt_nom_ajout_client.Size = new System.Drawing.Size(166, 38);
-            this.txt_nom_ajout_client.TabIndex = 4;
+            this.txt_nom_ajout_client.TabIndex = 1;
             this.txt_nom_ajout_client.Text = "Nom de Client";
             this.txt_nom_ajout_client.Enter += new System.EventHandler(this.txt_nom_ajout_client_Enter);
             this.txt_nom_ajout_client.Leave += new System.EventHandler(this.txt_nom_ajout_client_Leave);
@@ -171,7 +171,7 @@
             this.txt_prenom_ajout_client.Multiline = true;
             this.txt_prenom_ajout_client.Name = "txt_prenom_ajout_client";
             this.txt_prenom_ajout_client.Size = new System.Drawing.Size(166, 38);
-            this.txt_prenom_ajout_client.TabIndex = 7;
+            this.txt_prenom_ajout_client.TabIndex = 2;
             this.txt_prenom_ajout_client.Text = "Prenom de Client";
             this.txt_prenom_ajout_client.Enter += new System.EventHandler(this.txt_prenom_ajout_client_Enter);
             this.txt_prenom_ajout_client.Leave += new System.EventHandler(this.txt_prenom_ajout_client_Leave);
@@ -203,7 +203,7 @@
             this.txt_telephone_ajout_client.Multiline = true;
             this.txt_telephone_ajout_client.Name = "txt_telephone_ajout_client";
             this.txt_telephone_ajout_client.Size = new System.Drawing.Size(166, 38);
-            this.txt_telephone_ajout_client.TabIndex = 7;
+            this.txt_telephone_ajout_client.TabIndex = 4;
             this.txt_telephone_ajout_client.Text = "Telephone Client";
             this.txt_telephone_ajout_client.Enter += new System.EventHandler(this.txt_telephone_ajout_client_Enter);
             this.txt_telephone_ajout_client.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telephone_ajout_client_KeyPress);
@@ -236,7 +236,7 @@
             this.txt_email_ajout_client.Multiline = true;
             this.txt_email_ajout_client.Name = "txt_email_ajout_client";
             this.txt_email_ajout_client.Size = new System.Drawing.Size(166, 38);
-            this.txt_email_ajout_client.TabIndex = 7;
+            this.txt_email_ajout_client.TabIndex = 6;
             this.txt_email_ajout_client.Text = "Email Client";
             this.txt_email_ajout_client.Enter += new System.EventHandler(this.txt_email_ajout_client_Enter);
             this.txt_email_ajout_client.Leave += new System.EventHandler(this.txt_email_ajout_client_Leave);
@@ -300,7 +300,7 @@
             this.txt_adresse_ajout_client.Multiline = true;
             this.txt_adresse_ajout_client.Name = "txt_adresse_ajout_client";
             this.txt_adresse_ajout_client.Size = new System.Drawing.Size(166, 38);
-            this.txt_adresse_ajout_client.TabIndex = 7;
+            this.txt_adresse_ajout_client.TabIndex = 3;
             this.txt_adresse_ajout_client.Text = "Adresse Client";
             this.txt_adresse_ajout_client.Enter += new System.EventHandler(this.txt_adresse_ajout_client_Enter);
             this.txt_adresse_ajout_client.Leave += new System.EventHandler(this.txt_adresse_ajout_client_Leave);
@@ -332,7 +332,7 @@
             this.txt_pays_ajout_client.Multiline = true;
             this.txt_pays_ajout_client.Name = "txt_pays_ajout_client";
             this.txt_pays_ajout_client.Size = new System.Drawing.Size(166, 38);
-            this.txt_pays_ajout_client.TabIndex = 7;
+            this.txt_pays_ajout_client.TabIndex = 5;
             this.txt_pays_ajout_client.Text = "Pays Client";
             this.txt_pays_ajout_client.Enter += new System.EventHandler(this.txt_pays_ajout_client_Enter);
             this.txt_pays_ajout_client.Leave += new System.EventHandler(this.txt_pays_ajout_client_Leave);
@@ -344,7 +344,7 @@
             this.btn_actualiser_client.Location = new System.Drawing.Point(72, 445);
             this.btn_actualiser_client.Name = "btn_actualiser_client";
             this.btn_actualiser_client.Size = new System.Drawing.Size(191, 56);
-            this.btn_actualiser_client.TabIndex = 10;
+            this.btn_actualiser_client.TabIndex = 8;
             this.btn_actualiser_client.Text = "Actualiser";
             this.btn_actualiser_client.UseVisualStyleBackColor = false;
             this.btn_actualiser_client.Click += new System.EventHandler(this.btn_actualiser_client_Click);
@@ -356,7 +356,7 @@
             this.btn_enregistrer_client.Location = new System.Drawing.Point(377, 445);
             this.btn_enregistrer_client.Name = "btn_enregistrer_client";
             this.btn_enregistrer_client.Size = new System.Drawing.Size(191, 56);
-            this.btn_enregistrer_client.TabIndex = 11;
+            this.btn_enregistrer_client.TabIndex = 9;
             this.btn_enregistrer_client.Text = "Enregistrer";
             this.btn_enregistrer_client.UseVisualStyleBackColor = false;
             this.btn_enregistrer_client.Click += new System.EventHandler(this.btn_enregistrer_client_Click);

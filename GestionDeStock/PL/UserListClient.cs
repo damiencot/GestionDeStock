@@ -14,6 +14,7 @@ namespace GestionDeStock.PL
     {
 
         private static UserListClient userClient;
+        private BddStockContext bdd;
 
         //Créér une instance pour le userControle
         public static UserListClient instance
@@ -30,6 +31,19 @@ namespace GestionDeStock.PL
         public UserListClient()
         {
             InitializeComponent();
+            bdd = new BddStockContext();
+        }
+
+        //Ajouter dans la DataGrid
+        public void actualiserDataGrid()
+        {
+            //Vide le data Grid
+            data_grid_client.Rows.Clear();
+            foreach(var client in bdd.Clients)
+            {
+                //ajouter les clients  a la liste dataGrid
+                data_grid_client.Rows.Add(false,client.Nom_Client, client.Prenom_Client, client.Adresse_Client, client.Telephone_Client,client.Email_Client,client.Pays_Client,client.Ville_Client);
+            }
         }
 
         private void txt_recherche_client_Enter(object sender, EventArgs e)
@@ -42,23 +56,21 @@ namespace GestionDeStock.PL
             }
         }
 
+
         private void UserListClient_Load(object sender, EventArgs e)
         {
-            //Exemple ajout des lignes
-            data_grid_client.Rows.Add();
-            data_grid_client.Rows[0].Cells[1].Value = "Paul";
-            data_grid_client.Rows[0].Cells[2].Value = "Mathieu";
+            actualiserDataGrid();
         }
 
         private void btn_ajouter_client_Click(object sender, EventArgs e)
         {
-            PL.FrameAjouterModifierClient frmAjout = new FrameAjouterModifierClient();
+            PL.FrameAjouterModifierClient frmAjout = new FrameAjouterModifierClient(this);
             frmAjout.ShowDialog();
         }
 
         private void btn_modifier_client_Click(object sender, EventArgs e)
         {
-            PL.FrameAjouterModifierClient frmClient = new FrameAjouterModifierClient();
+            PL.FrameAjouterModifierClient frmClient = new FrameAjouterModifierClient(this);
             frmClient.lbl_titre_frameAjoutModifier.Text = "Modifier Client";
             frmClient.btn_actualiser_client.Visible = false;
             frmClient.ShowDialog();

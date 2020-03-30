@@ -13,9 +13,13 @@ namespace GestionDeStock.PL
 {
     public partial class FrameAjouterModifierClient : Form
     {
-        public FrameAjouterModifierClient()
+
+        private UserControl userClient;
+
+        public FrameAjouterModifierClient(UserControl userC)
         {
             InitializeComponent();
+            this.userClient = userC;
         }
         
         //champs obligatoires
@@ -208,6 +212,20 @@ namespace GestionDeStock.PL
             if(champsObligatoire() != null)
             {
                 MessageBox.Show(champsObligatoire(), "Obligatoire", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                BL.GestionClient classeClient = new BL.GestionClient();
+                if (classeClient.addClient(txt_nom_ajout_client.Text, txt_prenom_ajout_client.Text, txt_adresse_ajout_client.Text, txt_telephone_ajout_client.Text, txt_email_ajout_client.Text, txt_pays_ajout_client.Text, txt_ville_ajout_client.Text) == true)
+                {
+                    MessageBox.Show("Client ajouter avec succes", "Ajouter",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //Actualiser dataGrid auto
+                    (userClient as UserListClient).actualiserDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Client deja existant", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
