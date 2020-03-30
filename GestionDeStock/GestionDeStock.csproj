@@ -89,6 +89,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FrameAjouterModifierClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrameAjouterModifierClient.Designer.cs">
+      <DependentUpon>FrameAjouterModifierClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FrameConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="Utilisateur.cs">
       <DependentUpon>BddStock.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PL\FrameAjouterModifierClient.resx">
+      <DependentUpon>FrameAjouterModifierClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FrameConnexion.resx">
       <DependentUpon>FrameConnexion.cs</DependentUpon>
     </EmbeddedResource>

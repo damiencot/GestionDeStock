@@ -65,6 +65,7 @@
             this.btn_ajouter_client.TabIndex = 0;
             this.btn_ajouter_client.Text = "Ajouter";
             this.btn_ajouter_client.UseVisualStyleBackColor = false;
+            this.btn_ajouter_client.Click += new System.EventHandler(this.btn_ajouter_client_Click);
             // 
             // btn_modifier_client
             // 
@@ -80,6 +81,7 @@
             this.btn_modifier_client.TabIndex = 1;
             this.btn_modifier_client.Text = "Modifier";
             this.btn_modifier_client.UseVisualStyleBackColor = false;
+            this.btn_modifier_client.Click += new System.EventHandler(this.btn_modifier_client_Click);
             // 
             // btn_supprimer_client
             // 

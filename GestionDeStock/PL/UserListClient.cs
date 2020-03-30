@@ -49,5 +49,19 @@ namespace GestionDeStock.PL
             data_grid_client.Rows[0].Cells[1].Value = "Paul";
             data_grid_client.Rows[0].Cells[2].Value = "Mathieu";
         }
+
+        private void btn_ajouter_client_Click(object sender, EventArgs e)
+        {
+            PL.FrameAjouterModifierClient frmAjout = new FrameAjouterModifierClient();
+            frmAjout.ShowDialog();
+        }
+
+        private void btn_modifier_client_Click(object sender, EventArgs e)
+        {
+            PL.FrameAjouterModifierClient frmClient = new FrameAjouterModifierClient();
+            frmClient.lbl_titre_frameAjoutModifier.Text = "Modifier Client";
+            frmClient.btn_actualiser_client.Visible = false;
+            frmClient.ShowDialog();
+        }
     }
 }
