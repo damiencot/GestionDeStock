@@ -16,6 +16,7 @@ namespace GestionDeStock.PL
         private static UserListClient userClient;
         private BddStockContext bdd;
 
+
         //Créér une instance pour le userControle
         public static UserListClient instance
         {
@@ -37,13 +38,36 @@ namespace GestionDeStock.PL
         //Ajouter dans la DataGrid
         public void actualiserDataGrid()
         {
+            bdd = new BddStockContext();
             //Vide le data Grid
             data_grid_client.Rows.Clear();
             foreach(var client in bdd.Clients)
             {
                 //ajouter les clients  a la liste dataGrid
-                data_grid_client.Rows.Add(false,client.Nom_Client, client.Prenom_Client, client.Adresse_Client, client.Telephone_Client,client.Email_Client,client.Pays_Client,client.Ville_Client);
+                data_grid_client.Rows.Add(false,client.ID_Client,client.Nom_Client, client.Prenom_Client, client.Adresse_Client, client.Telephone_Client,client.Email_Client,client.Pays_Client,client.Ville_Client);
             }
+        }
+
+        //ligne selectionner
+        public string selectRows()
+        {
+            int nbrRows = 0;
+            for(int i = 0; i < data_grid_client.Rows.Count; i++)
+            {
+                if((bool)data_grid_client.Rows[i].Cells[0].Value == true)//ligne selectionner
+                {
+                    nbrRows++; //nbrRows + 1
+                }
+            }
+            if(nbrRows == 0)
+            {
+                return "Selectionner le client";
+            }
+            if (nbrRows > 1)
+            {
+                return "Selectionner seulement 1 client";
+            }
+            return null;
         }
 
         private void txt_recherche_client_Enter(object sender, EventArgs e)
@@ -71,9 +95,30 @@ namespace GestionDeStock.PL
         private void btn_modifier_client_Click(object sender, EventArgs e)
         {
             PL.FrameAjouterModifierClient frmClient = new FrameAjouterModifierClient(this);
-            frmClient.lbl_titre_frameAjoutModifier.Text = "Modifier Client";
-            frmClient.btn_actualiser_client.Visible = false;
-            frmClient.ShowDialog();
+            if (selectRows() == null)
+            {
+                for(int i = 0; i < data_grid_client.Rows.Count; i++)
+                {
+                    if((bool)data_grid_client.Rows[i].Cells[0].Value == true)//si checkbox == true afficher dans la frame
+                    {
+                        frmClient.idSelect = (int)data_grid_client.Rows[i].Cells[1].Value;
+                        frmClient.txt_nom_ajout_client.Text = data_grid_client.Rows[i].Cells[2].Value.ToString();
+                        frmClient.txt_prenom_ajout_client.Text = data_grid_client.Rows[i].Cells[3].Value.ToString();
+                        frmClient.txt_adresse_ajout_client.Text = data_grid_client.Rows[i].Cells[4].Value.ToString();
+                        frmClient.txt_telephone_ajout_client.Text = data_grid_client.Rows[i].Cells[5].Value.ToString();
+                        frmClient.txt_email_ajout_client.Text = data_grid_client.Rows[i].Cells[6].Value.ToString();
+                        frmClient.txt_pays_ajout_client.Text = data_grid_client.Rows[i].Cells[7].Value.ToString();
+                        frmClient.txt_ville_ajout_client.Text = data_grid_client.Rows[i].Cells[8].Value.ToString();
+
+                    }
+                }
+                frmClient.lbl_titre_frameAjoutModifier.Text = "Modifier Client";
+                frmClient.btn_actualiser_client.Visible = false;
+                frmClient.ShowDialog();
+            }else
+            {
+                MessageBox.Show(selectRows(), "Modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

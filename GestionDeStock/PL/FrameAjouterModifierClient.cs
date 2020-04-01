@@ -15,6 +15,8 @@ namespace GestionDeStock.PL
     {
 
         private UserControl userClient;
+        public int idSelect;
+
 
         public FrameAjouterModifierClient(UserControl userC)
         {
@@ -111,7 +113,6 @@ namespace GestionDeStock.PL
                 txt_telephone_ajout_client.ForeColor = Color.White;
             }
         }
-
         private void txt_telephone_ajout_client_Leave(object sender, EventArgs e)
         {
             if (txt_telephone_ajout_client.Text == "")
@@ -120,7 +121,6 @@ namespace GestionDeStock.PL
                 txt_telephone_ajout_client.ForeColor = Color.Silver;
             }
         }
-
         private void txt_adresse_ajout_client_Enter(object sender, EventArgs e)
         {
             if (txt_adresse_ajout_client.Text == "Adresse Client")
@@ -137,7 +137,6 @@ namespace GestionDeStock.PL
                 txt_adresse_ajout_client.ForeColor = Color.Silver;
             }
         }
-
         private void txt_email_ajout_client_Enter(object sender, EventArgs e)
         {
             if (txt_email_ajout_client.Text == "Email Client")
@@ -209,22 +208,41 @@ namespace GestionDeStock.PL
 
         private void btn_enregistrer_client_Click(object sender, EventArgs e)
         {
-            if(champsObligatoire() != null)
+            if (champsObligatoire() != null)
             {
-                MessageBox.Show(champsObligatoire(), "Obligatoire", MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            else
+                MessageBox.Show(champsObligatoire(), "Obligatoire", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else
             {
-                BL.GestionClient classeClient = new BL.GestionClient();
-                if (classeClient.addClient(txt_nom_ajout_client.Text, txt_prenom_ajout_client.Text, txt_adresse_ajout_client.Text, txt_telephone_ajout_client.Text, txt_email_ajout_client.Text, txt_pays_ajout_client.Text, txt_ville_ajout_client.Text) == true)
+                if (lbl_titre_frameAjoutModifier.Text == "Ajouter Client")
                 {
-                    MessageBox.Show("Client ajouter avec succes", "Ajouter",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //Actualiser dataGrid auto
-                    (userClient as UserListClient).actualiserDataGrid();
-                }
-                else
+                        BL.GestionClient classeClient = new BL.GestionClient();
+                        if (classeClient.addClient(txt_nom_ajout_client.Text, txt_prenom_ajout_client.Text, txt_adresse_ajout_client.Text, txt_telephone_ajout_client.Text, txt_pays_ajout_client.Text, txt_ville_ajout_client.Text, txt_email_ajout_client.Text) == true)
+                        {
+                            MessageBox.Show("Client ajouter avec succes", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            //Actualiser dataGrid auto
+                            (userClient as UserListClient).actualiserDataGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Client deja existant", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                 
+                }else
                 {
-                    MessageBox.Show("Client deja existant", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    BL.GestionClient classeClient = new BL.GestionClient();
+                    DialogResult r = MessageBox.Show("Voulez-vous vraiment modifier le client", "Modification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(r == DialogResult.Yes)
+                    {
+                        classeClient.updateClient(idSelect, txt_nom_ajout_client.Text, txt_prenom_ajout_client.Text, txt_adresse_ajout_client.Text, txt_telephone_ajout_client.Text, txt_pays_ajout_client.Text, txt_ville_ajout_client.Text, txt_email_ajout_client.Text);
+                        (userClient as UserListClient).actualiserDataGrid();
+                        MessageBox.Show("Modification avec succés", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Modification est annulé", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+
                 }
             }
         }
@@ -246,6 +264,11 @@ namespace GestionDeStock.PL
             txt_email_ajout_client.ForeColor = Color.Silver;
             txt_ville_ajout_client.Text = "Ville Client";
             txt_ville_ajout_client.ForeColor = Color.Silver;
+
+        }
+
+        private void FrameAjouterModifierClient_Load(object sender, EventArgs e)
+        {
 
         }
     }

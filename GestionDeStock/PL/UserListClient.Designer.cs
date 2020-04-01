@@ -42,6 +42,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.data_grid_client = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,6 +180,7 @@
             this.data_grid_client.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid_client.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Column9,
             this.Column2,
             this.Column3,
             this.Column4,
@@ -204,6 +206,12 @@
             this.Column1.HeaderText = "Select";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "id";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
             // 
             // Column2
             // 
@@ -288,6 +296,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView data_grid_client;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

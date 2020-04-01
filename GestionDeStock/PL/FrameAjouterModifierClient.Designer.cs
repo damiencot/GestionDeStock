@@ -109,7 +109,7 @@
             this.lbl_titre_frameAjoutModifier.Location = new System.Drawing.Point(92, 33);
             this.lbl_titre_frameAjoutModifier.Name = "lbl_titre_frameAjoutModifier";
             this.lbl_titre_frameAjoutModifier.Size = new System.Drawing.Size(171, 29);
-            this.lbl_titre_frameAjoutModifier.TabIndex = 2;
+            this.lbl_titre_frameAjoutModifier.TabIndex = 0;
             this.lbl_titre_frameAjoutModifier.Text = "Ajouter Client";
             // 
             // txt_nom_ajout_client
@@ -412,6 +412,7 @@
             this.Name = "FrameAjouterModifierClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrameAjouterModifierClient";
+            this.Load += new System.EventHandler(this.FrameAjouterModifierClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -430,30 +431,30 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txt_nom_ajout_client;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txt_prenom_ajout_client;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox txt_telephone_ajout_client;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox txt_email_ajout_client;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox txt_ville_ajout_client;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox txt_adresse_ajout_client;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TextBox txt_pays_ajout_client;
         private System.Windows.Forms.Button btn_enregistrer_client;
         private System.Windows.Forms.Button btn_connexion_quitter;
         public System.Windows.Forms.Label lbl_titre_frameAjoutModifier;
         public System.Windows.Forms.Button btn_actualiser_client;
+        public System.Windows.Forms.TextBox txt_nom_ajout_client;
+        public System.Windows.Forms.TextBox txt_prenom_ajout_client;
+        public System.Windows.Forms.TextBox txt_telephone_ajout_client;
+        public System.Windows.Forms.TextBox txt_email_ajout_client;
+        public System.Windows.Forms.TextBox txt_ville_ajout_client;
+        public System.Windows.Forms.TextBox txt_adresse_ajout_client;
+        public System.Windows.Forms.TextBox txt_pays_ajout_client;
     }
 }
