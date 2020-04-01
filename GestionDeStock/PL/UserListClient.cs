@@ -120,5 +120,46 @@ namespace GestionDeStock.PL
                 MessageBox.Show(selectRows(), "Modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_supprimer_client_Click(object sender, EventArgs e)
+        {
+            BL.GestionClient classClient = new BL.GestionClient();
+
+            int select = 0;
+            for(int i=0; i < data_grid_client.Rows.Count;i++)
+            {
+                if((bool)data_grid_client.Rows[i].Cells[0].Value == true)
+                {
+                    select++; // nbr de ligne selectionées
+                }
+            }
+
+            if(select ==0)
+            {
+                MessageBox.Show("Aucun client selectionner", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                DialogResult R = MessageBox.Show("Voulez-vous vraiment supprimer", "Suppresion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(R == DialogResult.Yes)
+                {
+                    //pour supprimer tous les clients selectionée
+                    for (int i = 0; i < data_grid_client.Rows.Count; i++)
+                    {
+                        if ((bool)data_grid_client.Rows[i].Cells[0].Value == true)
+                        {
+                            classClient.deleteClient(int.Parse(data_grid_client.Rows[i].Cells[1].Value.ToString())); //id Client
+                        }
+                    }
+                    //actualiser data
+                    actualiserDataGrid();
+                    MessageBox.Show("Client supprimer", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }else
+                {
+                    MessageBox.Show("Suppresion annulé", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
     }
 }

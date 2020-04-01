@@ -99,6 +99,7 @@
             this.btn_supprimer_client.TabIndex = 2;
             this.btn_supprimer_client.Text = "Supprimer";
             this.btn_supprimer_client.UseVisualStyleBackColor = false;
+            this.btn_supprimer_client.Click += new System.EventHandler(this.btn_supprimer_client_Click);
             // 
             // panel1
             // 
