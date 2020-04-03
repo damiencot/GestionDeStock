@@ -15,6 +15,7 @@
         <AssociationConnector Association="GESTION_DE_STOCKModel.FK_Commande_Client" />
         <AssociationConnector Association="GESTION_DE_STOCKModel.FK_Details_Commande_Commande" />
         <AssociationConnector Association="GESTION_DE_STOCKModel.FK_Details_Commande_Produit" />
+        <EntityTypeShape EntityType="GESTION_DE_STOCKModel.sysdiagram" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

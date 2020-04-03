@@ -65,7 +65,7 @@
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_menu.Location = new System.Drawing.Point(0, 0);
             this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(247, 630);
+            this.panel_menu.Size = new System.Drawing.Size(309, 892);
             this.panel_menu.TabIndex = 0;
             // 
             // panel_button
@@ -82,7 +82,7 @@
             this.btn_menu.FlatAppearance.BorderSize = 0;
             this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menu.Image = global::GestionDeStock.Properties.Resources.Menu_32;
-            this.btn_menu.Location = new System.Drawing.Point(195, 3);
+            this.btn_menu.Location = new System.Drawing.Point(257, 3);
             this.btn_menu.Name = "btn_menu";
             this.btn_menu.Size = new System.Drawing.Size(52, 40);
             this.btn_menu.TabIndex = 4;
@@ -178,9 +178,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(247, 0);
+            this.panel2.Location = new System.Drawing.Point(309, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(904, 22);
+            this.panel2.Size = new System.Drawing.Size(1206, 28);
             this.panel2.TabIndex = 1;
             // 
             // panel1
@@ -191,9 +191,9 @@
             this.panel1.Controls.Add(this.btn_resize);
             this.panel1.Controls.Add(this.btn_stop);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(247, 22);
+            this.panel1.Location = new System.Drawing.Point(309, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 608);
+            this.panel1.Size = new System.Drawing.Size(1206, 864);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -205,7 +205,7 @@
             this.panel_parametre.Controls.Add(this.btn_restaure_copie);
             this.panel_parametre.Controls.Add(this.btn_copie);
             this.panel_parametre.Controls.Add(this.btn_connecter);
-            this.panel_parametre.Location = new System.Drawing.Point(52, 7);
+            this.panel_parametre.Location = new System.Drawing.Point(52, 17);
             this.panel_parametre.Name = "panel_parametre";
             this.panel_parametre.Size = new System.Drawing.Size(322, 70);
             this.panel_parametre.TabIndex = 9;
@@ -288,7 +288,7 @@
             this.panel_afficher_client.BackColor = System.Drawing.Color.White;
             this.panel_afficher_client.Location = new System.Drawing.Point(6, 81);
             this.panel_afficher_client.Name = "panel_afficher_client";
-            this.panel_afficher_client.Size = new System.Drawing.Size(886, 515);
+            this.panel_afficher_client.Size = new System.Drawing.Size(1184, 748);
             this.panel_afficher_client.TabIndex = 10;
             // 
             // btn_parametre
@@ -309,7 +309,7 @@
             this.btn_resize.FlatAppearance.BorderSize = 0;
             this.btn_resize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_resize.Image = global::GestionDeStock.Properties.Resources.Subtract_32;
-            this.btn_resize.Location = new System.Drawing.Point(763, 4);
+            this.btn_resize.Location = new System.Drawing.Point(1030, 5);
             this.btn_resize.Name = "btn_resize";
             this.btn_resize.Size = new System.Drawing.Size(67, 48);
             this.btn_resize.TabIndex = 7;
@@ -322,7 +322,7 @@
             this.btn_stop.FlatAppearance.BorderSize = 0;
             this.btn_stop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_stop.Image = global::GestionDeStock.Properties.Resources.Shutdown_32;
-            this.btn_stop.Location = new System.Drawing.Point(836, 4);
+            this.btn_stop.Location = new System.Drawing.Point(1121, 5);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(67, 48);
             this.btn_stop.TabIndex = 6;
@@ -333,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 630);
+            this.ClientSize = new System.Drawing.Size(1515, 892);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_menu);

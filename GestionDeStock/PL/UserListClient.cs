@@ -33,6 +33,8 @@ namespace GestionDeStock.PL
         {
             InitializeComponent();
             bdd = new BddStockContext();
+            //desactive txt_recherche_client
+            txt_recherche_client.Enabled = false;
         }
 
         //Ajouter dans la DataGrid
@@ -72,7 +74,7 @@ namespace GestionDeStock.PL
 
         private void txt_recherche_client_Enter(object sender, EventArgs e)
         {
-            if(txt_recherche_client.Text == "Rechercher")
+            if (txt_recherche_client.Text == "Rechercher")
             {
                 txt_recherche_client.Text = "";
                 txt_recherche_client.ForeColor = Color.Black;
@@ -94,7 +96,7 @@ namespace GestionDeStock.PL
 
         private void btn_modifier_client_Click(object sender, EventArgs e)
         {
-            PL.FrameAjouterModifierClient frmClient = new FrameAjouterModifierClient(this);
+            FrameAjouterModifierClient frmClient = new FrameAjouterModifierClient(this);
             if (selectRows() == null)
             {
                 for(int i = 0; i < data_grid_client.Rows.Count; i++)
@@ -159,6 +161,53 @@ namespace GestionDeStock.PL
                 {
                     MessageBox.Show("Suppresion annulé", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private void comboBox_recherche_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //activier textbox recherche si valeur combobox choisis
+            txt_recherche_client.Enabled = true;
+            txt_recherche_client.Text = "";
+
+        }
+
+        private void txt_recherche_client_TextChanged(object sender, EventArgs e)
+        {
+            bdd = new BddStockContext();
+            var listRecherche = bdd.Clients.ToList();//listRecherche = list des clients
+            if(txt_recherche_client.Text != "")
+            {
+                switch(comboBox_recherche.Text)
+                {
+                    case "Nom":
+                        listRecherche = listRecherche.Where(s => s.Nom_Client.IndexOf(txt_recherche_client.Text, StringComparison.CurrentCultureIgnoreCase) != 1).ToList();
+                        //StringComparison.CurrentCultureIgnoreCase permet d'ignorer si la premiere letter est en majuscule ou miniscule
+                        // != 1 existe dans la bdd
+                        break;
+                    case "Prenom":
+                        listRecherche = listRecherche.Where(s => s.Prenom_Client.IndexOf(txt_recherche_client.Text, StringComparison.CurrentCultureIgnoreCase) != 1).ToList();
+                        break;
+                    case "Telephone":
+                        listRecherche = listRecherche.Where(s => s.Telephone_Client.IndexOf(txt_recherche_client.Text, StringComparison.CurrentCultureIgnoreCase) != 1).ToList();
+                        break;
+                    case "Ville":
+                        listRecherche = listRecherche.Where(s => s.Ville_Client.IndexOf(txt_recherche_client.Text, StringComparison.CurrentCultureIgnoreCase) != 1).ToList();
+                        break;
+                    case "Pays":
+                        listRecherche = listRecherche.Where(s => s.Pays_Client.IndexOf(txt_recherche_client.Text, StringComparison.CurrentCultureIgnoreCase) != 1).ToList();
+                        break;
+
+
+                }
+            }
+            //vider dataGrid
+            data_grid_client.Rows.Clear();
+            //ajouter listrecherche
+            foreach(var i in listRecherche)
+            {
+                data_grid_client.Rows.Add(false, i.ID_Client, i.Nom_Client, i.Prenom_Client, i.Adresse_Client, i.Telephone_Client, i.Email_Client , i.Pays_Client, i.Ville_Client);
+
             }
         }
     }

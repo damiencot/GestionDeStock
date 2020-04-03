@@ -39,7 +39,7 @@
             this.txt_recherche_client = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_recherche = new System.Windows.Forms.ComboBox();
             this.data_grid_client = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +61,7 @@
             this.btn_ajouter_client.ForeColor = System.Drawing.Color.White;
             this.btn_ajouter_client.Image = global::GestionDeStock.Properties.Resources.Actions_list_add_icon;
             this.btn_ajouter_client.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ajouter_client.Location = new System.Drawing.Point(41, 42);
+            this.btn_ajouter_client.Location = new System.Drawing.Point(87, 42);
             this.btn_ajouter_client.Name = "btn_ajouter_client";
             this.btn_ajouter_client.Size = new System.Drawing.Size(257, 66);
             this.btn_ajouter_client.TabIndex = 0;
@@ -77,7 +77,7 @@
             this.btn_modifier_client.ForeColor = System.Drawing.Color.White;
             this.btn_modifier_client.Image = global::GestionDeStock.Properties.Resources.Recycle_iconaaa;
             this.btn_modifier_client.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_modifier_client.Location = new System.Drawing.Point(347, 42);
+            this.btn_modifier_client.Location = new System.Drawing.Point(404, 42);
             this.btn_modifier_client.Name = "btn_modifier_client";
             this.btn_modifier_client.Size = new System.Drawing.Size(257, 66);
             this.btn_modifier_client.TabIndex = 1;
@@ -93,7 +93,7 @@
             this.btn_supprimer_client.ForeColor = System.Drawing.Color.White;
             this.btn_supprimer_client.Image = global::GestionDeStock.Properties.Resources.Close_2_icon;
             this.btn_supprimer_client.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_supprimer_client.Location = new System.Drawing.Point(650, 42);
+            this.btn_supprimer_client.Location = new System.Drawing.Point(746, 42);
             this.btn_supprimer_client.Name = "btn_supprimer_client";
             this.btn_supprimer_client.Size = new System.Drawing.Size(257, 66);
             this.btn_supprimer_client.TabIndex = 2;
@@ -108,7 +108,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Location = new System.Drawing.Point(110, 127);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(710, 5);
+            this.panel1.Size = new System.Drawing.Size(893, 5);
             this.panel1.TabIndex = 3;
             // 
             // panel2
@@ -118,7 +118,7 @@
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Location = new System.Drawing.Point(110, 224);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(710, 5);
+            this.panel2.Size = new System.Drawing.Size(893, 5);
             this.panel2.TabIndex = 4;
             // 
             // txt_recherche_client
@@ -126,13 +126,14 @@
             this.txt_recherche_client.BackColor = System.Drawing.Color.White;
             this.txt_recherche_client.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_recherche_client.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_recherche_client.Location = new System.Drawing.Point(441, 153);
+            this.txt_recherche_client.Location = new System.Drawing.Point(532, 153);
             this.txt_recherche_client.Multiline = true;
             this.txt_recherche_client.Name = "txt_recherche_client";
             this.txt_recherche_client.Size = new System.Drawing.Size(319, 50);
             this.txt_recherche_client.TabIndex = 5;
             this.txt_recherche_client.Text = "Rechercher";
             this.txt_recherche_client.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_recherche_client.TextChanged += new System.EventHandler(this.txt_recherche_client_TextChanged);
             this.txt_recherche_client.Enter += new System.EventHandler(this.txt_recherche_client_Enter);
             // 
             // contextMenuStrip1
@@ -144,27 +145,27 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Location = new System.Drawing.Point(441, 202);
+            this.panel3.Location = new System.Drawing.Point(531, 202);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(319, 5);
             this.panel3.TabIndex = 5;
             // 
-            // comboBox1
+            // comboBox_recherche
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_recherche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_recherche.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_recherche.FormattingEnabled = true;
+            this.comboBox_recherche.Items.AddRange(new object[] {
             "Nom",
             "Prenom",
             "Telephone",
-            "Email",
             "Ville",
             "Pays"});
-            this.comboBox1.Location = new System.Drawing.Point(122, 163);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(245, 37);
-            this.comboBox1.TabIndex = 7;
+            this.comboBox_recherche.Location = new System.Drawing.Point(213, 163);
+            this.comboBox_recherche.Name = "comboBox_recherche";
+            this.comboBox_recherche.Size = new System.Drawing.Size(245, 37);
+            this.comboBox_recherche.TabIndex = 7;
+            this.comboBox_recherche.SelectedIndexChanged += new System.EventHandler(this.comboBox_recherche_SelectedIndexChanged);
             // 
             // data_grid_client
             // 
@@ -199,7 +200,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.data_grid_client.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.data_grid_client.RowTemplate.Height = 24;
-            this.data_grid_client.Size = new System.Drawing.Size(940, 328);
+            this.data_grid_client.Size = new System.Drawing.Size(1123, 447);
             this.data_grid_client.TabIndex = 8;
             // 
             // Column1
@@ -267,7 +268,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.data_grid_client);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox_recherche);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txt_recherche_client);
             this.Controls.Add(this.panel2);
@@ -276,7 +277,7 @@
             this.Controls.Add(this.btn_modifier_client);
             this.Controls.Add(this.btn_ajouter_client);
             this.Name = "UserListClient";
-            this.Size = new System.Drawing.Size(946, 566);
+            this.Size = new System.Drawing.Size(1129, 694);
             this.Load += new System.EventHandler(this.UserListClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_client)).EndInit();
             this.ResumeLayout(false);
@@ -294,7 +295,7 @@
         private System.Windows.Forms.TextBox txt_recherche_client;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_recherche;
         private System.Windows.Forms.DataGridView data_grid_client;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;

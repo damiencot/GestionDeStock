@@ -22,8 +22,8 @@ namespace GestionDeStock
     
         public int ID_Produit { get; set; }
         public string Nom_Produit { get; set; }
-        public string Quantite_Produit { get; set; }
-        public string Prix_Produit { get; set; }
+        public Nullable<int> Quantite_Produit { get; set; }
+        public Nullable<int> Prix_Produit { get; set; }
         public byte[] Image_Produit { get; set; }
         public int ID_Categorie { get; set; }
     

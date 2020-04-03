@@ -236,10 +236,11 @@ namespace GestionDeStock.PL
                         classeClient.updateClient(idSelect, txt_nom_ajout_client.Text, txt_prenom_ajout_client.Text, txt_adresse_ajout_client.Text, txt_telephone_ajout_client.Text, txt_pays_ajout_client.Text, txt_ville_ajout_client.Text, txt_email_ajout_client.Text);
                         (userClient as UserListClient).actualiserDataGrid();
                         MessageBox.Show("Modification avec succés", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        Close();
                     }
                     else
                     {
-                        MessageBox.Show("Modification est annulé", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Modification annulé", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
 
@@ -268,6 +269,11 @@ namespace GestionDeStock.PL
         }
 
         private void FrameAjouterModifierClient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_telephone_ajout_client_TextChanged(object sender, EventArgs e)
         {
 
         }

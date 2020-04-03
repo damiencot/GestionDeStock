@@ -80,6 +80,16 @@ namespace GestionDeStock.PL
         private void btn_produit_Click(object sender, EventArgs e)
         {
             panel_button.Top = btn_produit.Top;
+            if (!panel_afficher_client.Controls.Contains(UserListProduit.instance))
+            {
+                panel_afficher_client.Controls.Add(UserListProduit.instance);
+                UserListProduit.instance.Dock = DockStyle.Fill;
+                UserListProduit.instance.BringToFront();
+            }
+            else
+            {
+                UserListProduit.instance.BringToFront();
+            }
         }
 
         private void btn_client_Click(object sender, EventArgs e)

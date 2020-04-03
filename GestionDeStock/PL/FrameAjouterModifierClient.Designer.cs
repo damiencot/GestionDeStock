@@ -205,6 +205,7 @@
             this.txt_telephone_ajout_client.Size = new System.Drawing.Size(166, 38);
             this.txt_telephone_ajout_client.TabIndex = 4;
             this.txt_telephone_ajout_client.Text = "Telephone Client";
+            this.txt_telephone_ajout_client.TextChanged += new System.EventHandler(this.txt_telephone_ajout_client_TextChanged);
             this.txt_telephone_ajout_client.Enter += new System.EventHandler(this.txt_telephone_ajout_client_Enter);
             this.txt_telephone_ajout_client.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telephone_ajout_client_KeyPress);
             this.txt_telephone_ajout_client.Leave += new System.EventHandler(this.txt_telephone_ajout_client_Leave);
