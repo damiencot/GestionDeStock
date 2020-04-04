@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Reporting.WinForms;
+using Microsoft.Office.Interop.Excel;
+
 
 namespace GestionDeStock.PL
 {
@@ -207,6 +210,102 @@ namespace GestionDeStock.PL
                 else
                 {
                     MessageBox.Show("Suppresion annulé", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void btn_imprimer_selection_Click(object sender, EventArgs e)
+        {
+            bdd = new BddStockContext();
+            int idSelect = 0;
+            string nomCategorie = null;
+            FrameRapport frmRapport = new FrameRapport();
+            Produit classProduit = new Produit();
+            if(selectRows() != null)
+            {
+                MessageBox.Show(selectRows(), "Imprimer Produit", MessageBoxButtons.OK, MessageBoxIcon.Error);// plusieur ligne de cocher
+            }else
+            {
+                for(int i = 0; i < data_grid_produit.Rows.Count; i++)
+                {
+                    if((bool)data_grid_produit.Rows[i].Cells[0].Value == true)//si ligne cocher
+                    {
+                        idSelect = (int)data_grid_produit.Rows[i].Cells[1].Value; // id de ligne selectionner
+                        nomCategorie = data_grid_produit.Rows[i].Cells[5].Value.ToString(); // recupere la categorie dans la ligne selectionner
+                    }
+                }
+                //-------//
+                classProduit = bdd.Produits.SingleOrDefault(s => s.ID_Produit == idSelect);
+                if(classProduit != null)//si produit existe
+                {
+                    
+                    frmRapport.rapport_show_produit.LocalReport.ReportEmbeddedResource = "GestionDeStock.Rapport.RptProduit.rdlc"; //chemin du rapport
+                    ReportParameter produitCategorie = new ReportParameter("RPCategorie", nomCategorie);
+                    ReportParameter produitNom = new ReportParameter("RPNom", classProduit.Nom_Produit);
+                    ReportParameter produitQuantite = new ReportParameter("RPQuantité", classProduit.Quantite_Produit.ToString());
+                    ReportParameter produitPrix = new ReportParameter("RPPrix", classProduit.Prix_Produit.ToString());
+                    //Image
+                    string imageString = Convert.ToBase64String(classProduit.Image_Produit);
+                    ReportParameter produitImage = new ReportParameter("RPImage", imageString);//image convertis en string base x64
+                    //save les nouveaux paramettre dans le rapport
+                    frmRapport.rapport_show_produit.LocalReport.SetParameters(new ReportParameter[] { produitCategorie, produitNom, produitQuantite, produitPrix, produitImage });
+                    frmRapport.rapport_show_produit.RefreshReport();
+                    frmRapport.ShowDialog();//afficher formulaire
+                }
+            }
+        }
+
+        private void btn_imprimer_total_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrameRapport frmRpt = new FrameRapport();
+                bdd = new BddStockContext();
+                var listProduit = bdd.Produits.ToList();
+                frmRpt.rapport_show_produit.LocalReport.ReportEmbeddedResource = "GestionDeStock.Rapport.RptListProduits.rdlc"; //chemin du rapport
+                //ajouter data source
+                frmRpt.rapport_show_produit.LocalReport.DataSources.Add(new ReportDataSource("databaseproduit", listProduit));//liste des produits
+                ReportParameter date = new ReportParameter("Date", DateTime.Now.ToString());//date systeme
+                frmRpt.rapport_show_produit.LocalReport.SetParameters(new ReportParameter[] { date });
+                frmRpt.rapport_show_produit.RefreshReport();
+                frmRpt.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_exel_produit_Click(object sender, EventArgs e)
+        {
+            bdd = new BddStockContext();
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsw", ValidateNames = true })//filtrer seulement fichier exel
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                    Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                    Worksheet ws = (Worksheet)app.ActiveSheet;
+                    app.Visible = false;
+                    //Ajouter les ligne au fichier excel
+                    ws.Cells[1, 1] = "Id Produit";
+                    ws.Cells[1, 2] = "Nom Produit";
+                    ws.Cells[1, 3] = "Quantité";
+                    ws.Cells[1, 4] = "Prix";
+                    //Ajouter liste de produit de la base de donnée dans le fichier excel
+                    var listProduit = bdd.Produits.ToList();//listes des produits
+                    int i = 2;
+                    foreach (var L in listProduit)
+                    {
+                        ws.Cells[i, 1] = L.ID_Produit;
+                        ws.Cells[i, 2] = L.Nom_Produit;
+                        ws.Cells[i, 3] = L.Quantite_Produit;
+                        ws.Cells[i, 4] = L.Prix_Produit;
+                        i++;
+                    }
+                    wb.SaveAs(sfd.FileName);//sauvegarde fichier excel
+                    app.Quit();
+                    MessageBox.Show("Succés de la Sauvegarde", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
         }
