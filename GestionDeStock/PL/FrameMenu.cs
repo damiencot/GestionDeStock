@@ -111,6 +111,17 @@ namespace GestionDeStock.PL
         private void btn_categorie_Click(object sender, EventArgs e)
         {
             panel_button.Top = btn_categorie.Top;
+
+            if (!panel_afficher_client.Controls.Contains(UserListCategorie.instance))
+            {
+                panel_afficher_client.Controls.Add(UserListCategorie.instance);
+                UserListCategorie.instance.Dock = DockStyle.Fill;
+                UserListCategorie.instance.BringToFront();
+            }
+            else
+            {
+                UserListCategorie.instance.BringToFront();
+            }
         }
 
         private void btn_commande_Click(object sender, EventArgs e)

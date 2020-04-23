@@ -106,7 +106,8 @@
             // 
             this.lbl_titre_frameAjoutModifier.AutoSize = true;
             this.lbl_titre_frameAjoutModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titre_frameAjoutModifier.Location = new System.Drawing.Point(92, 33);
+            this.lbl_titre_frameAjoutModifier.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_titre_frameAjoutModifier.Location = new System.Drawing.Point(76, 33);
             this.lbl_titre_frameAjoutModifier.Name = "lbl_titre_frameAjoutModifier";
             this.lbl_titre_frameAjoutModifier.Size = new System.Drawing.Size(171, 29);
             this.lbl_titre_frameAjoutModifier.TabIndex = 0;

@@ -92,6 +92,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BddStock.edmx</DependentUpon>
     </Compile>
+    <Compile Include="BL\GestionCategorie.cs" />
     <Compile Include="BL\GestionClient.cs" />
     <Compile Include="BL\Connexion.cs" />
     <Compile Include="BL\GestionProduit.cs" />
@@ -112,6 +113,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrameAjouterModifierCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrameAjouterModifierCategorie.Designer.cs">
+      <DependentUpon>FrameAjouterModifierCategorie.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FrameAjouterModifierClient.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,12 @@
     <Compile Include="PL\FramePhotoProduit.Designer.cs">
       <DependentUpon>FramePhotoProduit.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\UserListCategorie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\UserListCategorie.Designer.cs">
+      <DependentUpon>UserListCategorie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rapport\FrameRapport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +186,9 @@
     <Compile Include="Utilisateur.cs">
       <DependentUpon>BddStock.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PL\FrameAjouterModifierCategorie.resx">
+      <DependentUpon>FrameAjouterModifierCategorie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FrameAjouterModifierClient.resx">
       <DependentUpon>FrameAjouterModifierClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FramePhotoProduit.resx">
       <DependentUpon>FramePhotoProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UserListCategorie.resx">
+      <DependentUpon>UserListCategorie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rapport\FrameRapport.resx">
       <DependentUpon>FrameRapport.cs</DependentUpon>
@@ -207,6 +226,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Rapport\RptListCategorie.rdlc" />
     <EmbeddedResource Include="Rapport\RptListProduits.rdlc" />
     <EmbeddedResource Include="Rapport\RptProduit.rdlc" />
     <EntityDeploy Include="BddStock.edmx">
@@ -217,6 +237,7 @@
       <DependentUpon>BddStock.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Categorie.datasource" />
     <None Include="Properties\DataSources\Produit.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

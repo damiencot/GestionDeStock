@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.data_grid_produit = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +49,7 @@
             this.btn_exel_produit = new System.Windows.Forms.Button();
             this.btn_imprimer_total = new System.Windows.Forms.Button();
             this.btn_imprimer_selection = new System.Windows.Forms.Button();
+            this.btn_actualiser_produits = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_produit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +57,14 @@
             // 
             this.data_grid_produit.AllowUserToAddRows = false;
             this.data_grid_produit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_grid_produit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_grid_produit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data_grid_produit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid_produit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -78,9 +79,9 @@
             this.data_grid_produit.RowHeadersVisible = false;
             this.data_grid_produit.RowHeadersWidth = 51;
             this.data_grid_produit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.data_grid_produit.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_grid_produit.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.data_grid_produit.RowTemplate.Height = 24;
             this.data_grid_produit.Size = new System.Drawing.Size(1343, 395);
             this.data_grid_produit.TabIndex = 17;
@@ -294,10 +295,28 @@
             this.btn_imprimer_selection.UseVisualStyleBackColor = false;
             this.btn_imprimer_selection.Click += new System.EventHandler(this.btn_imprimer_selection_Click);
             // 
+            // btn_actualiser_produits
+            // 
+            this.btn_actualiser_produits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_actualiser_produits.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_actualiser_produits.FlatAppearance.BorderSize = 0;
+            this.btn_actualiser_produits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_actualiser_produits.ForeColor = System.Drawing.Color.White;
+            this.btn_actualiser_produits.Image = global::GestionDeStock.Properties.Resources.Refresh_icon;
+            this.btn_actualiser_produits.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_actualiser_produits.Location = new System.Drawing.Point(923, 134);
+            this.btn_actualiser_produits.Name = "btn_actualiser_produits";
+            this.btn_actualiser_produits.Size = new System.Drawing.Size(239, 60);
+            this.btn_actualiser_produits.TabIndex = 22;
+            this.btn_actualiser_produits.Text = "Actualiser Tableau";
+            this.btn_actualiser_produits.UseVisualStyleBackColor = false;
+            this.btn_actualiser_produits.Click += new System.EventHandler(this.btn_actualiser_produits_Click);
+            // 
             // UserListProduit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_actualiser_produits);
             this.Controls.Add(this.btn_exel_produit);
             this.Controls.Add(this.btn_imprimer_total);
             this.Controls.Add(this.btn_imprimer_selection);
@@ -340,5 +359,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button btn_actualiser_produits;
     }
 }

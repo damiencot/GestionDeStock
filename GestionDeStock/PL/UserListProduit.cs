@@ -309,5 +309,10 @@ namespace GestionDeStock.PL
                 }
             }
         }
+
+        private void btn_actualiser_produits_Click(object sender, EventArgs e)
+        {
+            actualiserDataGrid();
+        }
     }
 }
