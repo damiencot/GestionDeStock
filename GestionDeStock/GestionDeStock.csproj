@@ -132,11 +132,23 @@
     <Compile Include="PL\FrameAjouterModifierProduit.Designer.cs">
       <DependentUpon>FrameAjouterModifierProduit.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FrameClientCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrameClientCommande.Designer.cs">
+      <DependentUpon>FrameClientCommande.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FrameConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\FrameConnexion.Designer.cs">
       <DependentUpon>FrameConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrameDetailCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FrameDetailCommande.Designer.cs">
+      <DependentUpon>FrameDetailCommande.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FrameMenu.cs">
       <SubType>Form</SubType>
@@ -155,6 +167,12 @@
     </Compile>
     <Compile Include="PL\UserListCategorie.Designer.cs">
       <DependentUpon>UserListCategorie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\UserListCommande.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\UserListCommande.Designer.cs">
+      <DependentUpon>UserListCommande.cs</DependentUpon>
     </Compile>
     <Compile Include="Rapport\FrameRapport.cs">
       <SubType>Form</SubType>
@@ -180,9 +198,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>BddStock.tt</DependentUpon>
-    </Compile>
     <Compile Include="Utilisateur.cs">
       <DependentUpon>BddStock.tt</DependentUpon>
     </Compile>
@@ -195,8 +210,14 @@
     <EmbeddedResource Include="PL\FrameAjouterModifierProduit.resx">
       <DependentUpon>FrameAjouterModifierProduit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrameClientCommande.resx">
+      <DependentUpon>FrameClientCommande.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FrameConnexion.resx">
       <DependentUpon>FrameConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FrameDetailCommande.resx">
+      <DependentUpon>FrameDetailCommande.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FrameMenu.resx">
       <DependentUpon>FrameMenu.cs</DependentUpon>
@@ -206,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\UserListCategorie.resx">
       <DependentUpon>UserListCategorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\UserListCommande.resx">
+      <DependentUpon>UserListCommande.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rapport\FrameRapport.resx">
       <DependentUpon>FrameRapport.cs</DependentUpon>

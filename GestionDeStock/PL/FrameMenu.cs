@@ -127,6 +127,16 @@ namespace GestionDeStock.PL
         private void btn_commande_Click(object sender, EventArgs e)
         {
             panel_button.Top = btn_commande.Top;
+            if (!panel_afficher_client.Controls.Contains(UserListCommande.instance))
+            {
+                panel_afficher_client.Controls.Add(UserListCommande.instance);
+                UserListCommande.instance.Dock = DockStyle.Fill;
+                UserListCommande.instance.BringToFront();
+            }
+            else
+            {
+                UserListCommande.instance.BringToFront();
+            }
         }
 
         private void btn_utilisateur_Click(object sender, EventArgs e)

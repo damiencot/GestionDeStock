@@ -210,5 +210,10 @@ namespace GestionDeStock.PL
 
             }
         }
+
+        private void data_grid_client_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
